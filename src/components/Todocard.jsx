@@ -19,31 +19,7 @@ function TodoCard() {
   const [nextPage, setNextPage] = useState(null);
   const [previousPage, setPreviousPage] = useState(null);
 
-  const fetchTodo1 = async (url) => {
-    try {
-      const response = await fetch(url, {
-        method: 'GET',
-        headers: {
-          'Authorization': 'token 9962edaa0003ac29e71e0972963544ae828e44db',
-          'Content-Type': 'application/json',
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-
-      const data = await response.json();
-      const { previous, next } = data.links;
-      console.log(data)
-      setTodos(data.results);
-      setNextPage(next);
-      setPreviousPage(previous);
-    } catch (error) {
-      console.error('Error while fetching todos:', error);
-    }
-  };
-  const fetchTodo2 = async (url) => {
+  const fetchTodo = async (url) => {
     try {
       const response = await fetch(url, {
         method: 'GET',
@@ -69,8 +45,7 @@ function TodoCard() {
   };
 
   useEffect(() => {
-    fetchTodo1(base_url);
-    fetchTodo2(base_url);
+    fetchTodo(base_url);
   }, []);
 
   return (
@@ -97,8 +72,8 @@ function TodoCard() {
         {/* </Paginate> */}
       </ul>
       <br />
-      <button onClick={() => fetchTodo1(previousPage)} disabled={previousPage === null}>Previous</button>
-      <button onClick={() => fetchTodo1(nextPage)} disabled={nextPage === null}>Next</button>
+      <button onClick={() => fetchTodo(previousPage)} disabled={previousPage === null}>Previous</button>
+      <button onClick={() => fetchTodo(nextPage)} disabled={nextPage === null}>Next</button>
     </>
   );
 }
