@@ -9,7 +9,14 @@ const Recipes = () => {
 
   const fetchRecipes = async (url) => {
     try {
-      const response = await fetch(url);
+      const response = await fetch(url,{
+        method: 'GET',
+        headers: {
+          'Authorization': 'token 9962edaa0003ac29e71e0972963544ae828e44db',
+          'Content-Type': 'application/json',
+        },
+      });
+      console.log("hellooooooooooo")
       if (!response.ok) {
         console.log("Error while fetching recipes")
         throw new Error('Network response was not ok');
