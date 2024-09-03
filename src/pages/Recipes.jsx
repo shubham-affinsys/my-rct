@@ -16,7 +16,6 @@ const Recipes = () => {
           'Content-Type': 'application/json',
         },
       });
-      console.log("hellooooooooooo")
       if (!response.ok) {
         console.log("Error while fetching recipes")
         throw new Error('Network response was not ok');
