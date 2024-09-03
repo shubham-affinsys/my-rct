@@ -1,0 +1,41 @@
+/* App.css or your component-specific CSS file */
+
+/* Container for the main content */
+.content {
+    padding: 16px; /* Space around the content */
+    max-width: 700px; /* Max width of the content */
+    margin: 0 auto; /* Center the content */
+    max-height: 400px;
+  }
+  
+  /* Styling for the list of recipes */
+  ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 16px; /* Space between cards */
+  }
+  
+  /* Styling for each list item (card) */
+  li {
+    background-color: hsl(239, 70%, 80%); /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 16px; /* Space inside the card */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s; /* Smooth transform on hover */
+  }
+  
+  /* Card hover effect */
+  li:hover {
+    transform: scale(1.03); /* Slightly enlarge the card */
+  }
+  
+  /* Styling for the no recipes message */
+  .no-recipes-message {
+    font-style: italic; /* Italicize the message */
+    color: #666; /* Gray color for the text */
+  }
+  
