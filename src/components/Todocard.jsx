@@ -1,15 +1,21 @@
-import { CodeBlock, dracula } from "react-code-blocks";
-import React, { useState, useEffect, memo } from 'react';
+// import { CodeBlock, dracula } from "react-code-blocks";
+import React, { useState, useEffect, memo, useDebugValue } from 'react';
 import Paginate from "../util/Paginate";
 // Memoized Todo Component
 const Todo = memo(({ todo_title, todo_description, user, is_done }) => {
   return (
-    <CodeBlock
-      text={`"${todo_title}"\n"${todo_description}"\nuser="${user}"\nis_done=${is_done}`}
-      language="javascript"
-      showLineNumbers={false}
-      theme={dracula}
-    />
+    // <CodeBlock
+    //   text={`"${todo_title}"\n"${todo_description}"\nuser="${user}"\nis_done=${is_done}`}
+    //   language="javascript"
+    //   showLineNumbers={false}
+    //   theme={dracula}
+    // />
+    <div>
+    <p>{todo_title}</p>
+    <p>{todo_description}</p>
+    <p>{user}</p>
+    <p>{is_done}</p>
+    </div>
   );
 });
 

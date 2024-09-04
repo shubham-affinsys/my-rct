@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CodeBlock, dracula } from "react-code-blocks";
+// import { CodeBlock, dracula } from "react-code-blocks";
 import GetImage from "../util/GetImage";
 import "./RecipeCard.css"
 
