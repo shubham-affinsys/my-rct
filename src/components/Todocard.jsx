@@ -1,21 +1,22 @@
-// import { CodeBlock, dracula } from "react-code-blocks";
+import { CodeBlock, dracula } from "react-code-blocks";
 import React, { useState, useEffect, memo, useDebugValue } from 'react';
 import Paginate from "../util/Paginate";
 // Memoized Todo Component
 const Todo = memo(({ todo_title, todo_description, user, is_done }) => {
   return (
-    // <CodeBlock
-    //   text={`"${todo_title}"\n"${todo_description}"\nuser="${user}"\nis_done=${is_done}`}
-    //   language="javascript"
-    //   showLineNumbers={false}
-    //   theme={dracula}
-    // />
-    <div>
-    <p>{todo_title}</p>
-    <p>{todo_description}</p>
-    <p>{user}</p>
-    <p>{is_done}</p>
-    </div>
+    //dont use clodeBlock it uses heavy resouces to load 'react-code-blocks' themes many chunks are fetched resulting in delapyed page load  .. deployed machine might handle them efficiently
+    <CodeBlock
+      text={`"${todo_title}"\n"${todo_description}"\nuser="${user}"\nis_done=${is_done}`}
+      language="javascript"
+      showLineNumbers={false}
+      theme={dracula}
+    />
+  //   <div>
+  //   <p>{todo_title}</p>
+  //   <p>{todo_description}</p>
+  //   <p>{user}</p>
+  //   <p>{is_done}</p>
+  //   </div>
   );
 });
 
